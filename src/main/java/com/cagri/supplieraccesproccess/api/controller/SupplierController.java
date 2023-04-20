@@ -14,16 +14,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping(name = "api/supplier")
+@CrossOrigin("*")
 public class SupplierController {
 
     @Autowired
     private SupplierService supplierService;
 
-    @GetMapping("/getSupplier")
+    @GetMapping("/getSupplierProccessData")
     public DataResult<List<Supplier>> getListPerson() {
         return this.supplierService.getListSupplier();
     }
-    @PostMapping("/addSupplier")
+    @PostMapping("/addSupplierProccessData")
     public Result addPerson (@RequestBody List<SupplierRequest> supplierRequest) {
         System.out.println(supplierRequest.toString());
         return this.supplierService.addSupplier(supplierRequest);

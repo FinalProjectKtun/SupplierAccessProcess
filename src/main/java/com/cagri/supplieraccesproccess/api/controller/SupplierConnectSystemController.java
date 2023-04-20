@@ -14,16 +14,17 @@ import java.util.List;
 
 @RequestMapping("api/scs")
 @RestController
+@CrossOrigin("*")
 public class SupplierConnectSystemController {
 
     @Autowired
     private SupplierConnectSystemService supplierConnectSystemService;
 
-    @GetMapping("/getSupplier")
+    @GetMapping("/getSupplierConnectSystem")
     public DataResult<List<SupplierConnectSystem>> getListScs() {
         return this.supplierConnectSystemService.getListScS();
     }
-    @PostMapping("/addSupplier")
+    @PostMapping("/addSupplierConnectSystem")
     public Result addScs (@RequestBody List<SupplierConnectSystemRequest> supplierConnectSystemRequests) {
         System.out.println(supplierConnectSystemService.toString());
         return this.supplierConnectSystemService.addScS(supplierConnectSystemRequests);

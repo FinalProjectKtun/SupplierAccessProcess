@@ -13,16 +13,17 @@ import java.util.List;
 
 @RestController
 @RequestMapping( "api/person")
+@CrossOrigin("*")
 public class PersonController {
 
     @Autowired
     private PersonService personService;
 
-    @GetMapping("/getPerson")
+    @GetMapping("/getResponsiblePerson")
     public DataResult<List<Person>> getListPerson() {
         return this.personService.getListPerson();
     }
-    @PostMapping("/addPerson")
+    @PostMapping("/addResponsiblePerson")
     public Result addPerson (@RequestBody Person person) {
         System.out.println(person.toString());
         return this.personService.addPerson(person);
