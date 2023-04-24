@@ -12,10 +12,12 @@ import java.util.Date;
 public class Supplier extends BaseEntity{
 
     private String supplierName;
+
+    private String personResponsibleForTheRequest;
+
+    private String phoneNumOfThePerResForTheReq;
     private Date supplierDate;
-
     private Date supplierConnectStarted;
-
     private Date supplierConnectEnd;
     private String description;
 

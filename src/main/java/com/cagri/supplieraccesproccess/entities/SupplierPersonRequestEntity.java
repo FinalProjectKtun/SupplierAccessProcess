@@ -10,7 +10,6 @@ import lombok.Data;
 public class SupplierPersonRequestEntity extends BaseEntity{
 
     private Long id;
-
     private Long personId;
     private Long supplierId;
 }

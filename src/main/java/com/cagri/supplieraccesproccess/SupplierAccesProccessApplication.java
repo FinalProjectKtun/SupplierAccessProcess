@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SupplierAccesProccessApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SupplierAccesProccessApplication.class, args);
+            SpringApplication.run(SupplierAccesProccessApplication.class, args);
     }
 
 }
