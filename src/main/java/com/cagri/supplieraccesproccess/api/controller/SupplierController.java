@@ -2,6 +2,7 @@ package com.cagri.supplieraccesproccess.api.controller;
 
 import com.cagri.supplieraccesproccess.core.utilities.results.DataResult;
 import com.cagri.supplieraccesproccess.core.utilities.results.Result;
+import com.cagri.supplieraccesproccess.dto.SuplierStatusUpdateRequestDto;
 import com.cagri.supplieraccesproccess.dto.SupplierRequest;
 import com.cagri.supplieraccesproccess.entities.Person;
 import com.cagri.supplieraccesproccess.entities.Supplier;
@@ -29,4 +30,10 @@ public class SupplierController {
         System.out.println(supplierRequest.toString());
         return this.supplierService.addSupplier(supplierRequest);
     }
+
+    @PostMapping("/updateSupplierStatus")
+    public Result updateSupplier(@RequestBody  SuplierStatusUpdateRequestDto requestDto,@RequestParam Long supplierId) {
+        return this.supplierService.updateSupplier(requestDto,supplierId);
+    }
+
 }

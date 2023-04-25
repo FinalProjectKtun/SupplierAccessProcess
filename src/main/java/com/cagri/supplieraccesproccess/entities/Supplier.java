@@ -1,7 +1,6 @@
 package com.cagri.supplieraccesproccess.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.util.Date;
@@ -9,7 +8,11 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "supplier")
-public class Supplier extends BaseEntity{
+public class Supplier{
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
     private String supplierName;
 
@@ -20,8 +23,6 @@ public class Supplier extends BaseEntity{
     private Date supplierConnectStarted;
     private Date supplierConnectEnd;
     private String description;
-
-
-
+    private String status;
 
 }
