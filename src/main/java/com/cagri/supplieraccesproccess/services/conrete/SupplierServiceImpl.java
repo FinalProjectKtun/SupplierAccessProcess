@@ -31,6 +31,7 @@ public class SupplierServiceImpl implements SupplierService {
         supplier.setPhoneNumOfThePerResForTheReq(request.getPhoneNumOfThePerResForTheReq());
         supplier.setSupplierConnectStarted(request.getSupplierConnectStarted());
         supplier.setSupplierConnectEnd(request.getSupplierConnectEnd());
+        supplier.setStatus("Onaylanmadı");
         supplier.setDescription(request.getDescription());
         return supplier;
     }

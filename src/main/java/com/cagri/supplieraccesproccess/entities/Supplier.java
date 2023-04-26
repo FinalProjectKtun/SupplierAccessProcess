@@ -17,11 +17,10 @@ public class Supplier{
     private String supplierName;
 
     private String personResponsibleForTheRequest;
-
     private String phoneNumOfThePerResForTheReq;
-    private Date supplierDate;
-    private Date supplierConnectStarted;
-    private Date supplierConnectEnd;
+    private String supplierDate;
+    private String supplierConnectStarted;
+    private String supplierConnectEnd;
     private String description;
     private String status;
 
