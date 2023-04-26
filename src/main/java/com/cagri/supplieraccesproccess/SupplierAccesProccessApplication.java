@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SupplierAccessProccessApplication {
+public class SupplierAccesProccessApplication {
 
     public static void main(String[] args) {
-            SpringApplication.run(SupplierAccessProccessApplication.class, args);
+            SpringApplication.run(SupplierAccesProccessApplication.class, args);
     }
 
 }

@@ -52,14 +52,15 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public Result updateSupplier(SuplierStatusUpdateRequestDto requestDto, Long supplierId) {
-        Optional<Supplier> supplierDb=this.supplierRepository.findById(supplierId);
+    public Result updateSupplier(SuplierStatusUpdateRequestDto requestDto) {
+        Optional<Supplier> supplierDb=this.supplierRepository.findById(requestDto.getId());
         Supplier supplier = supplierDb.get();
         if (supplierDb.isPresent()) {
+            supplier.setId(requestDto.getId());
             supplier.setStatus(requestDto.getStatus());
             this.supplierRepository.save(supplier);
         }
-        return new SuccessResult("güncellendi "+ supplierId) ;
+        return new SuccessResult("güncellendi ") ;
     }
 
 

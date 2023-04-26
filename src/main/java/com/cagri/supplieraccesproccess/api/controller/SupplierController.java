@@ -32,8 +32,8 @@ public class SupplierController {
     }
 
     @PostMapping("/updateSupplierStatus")
-    public Result updateSupplier(@RequestBody  SuplierStatusUpdateRequestDto requestDto,@RequestParam Long requestId) {
-        return this.supplierService.updateSupplier(requestDto,requestId);
+    public Result updateSupplier(@RequestBody  SuplierStatusUpdateRequestDto requestDto) {
+        return this.supplierService.updateSupplier(requestDto);
     }
 
 }
