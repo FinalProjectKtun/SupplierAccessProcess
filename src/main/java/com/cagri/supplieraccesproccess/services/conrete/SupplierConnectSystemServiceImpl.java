@@ -21,6 +21,7 @@ public class SupplierConnectSystemServiceImpl implements SupplierConnectSystemSe
     private SupplierConnectSystemRepository supplierConnectSystemRepository;
     public  static SupplierConnectSystem mapToScs(SupplierConnectSystemRequest request){
         SupplierConnectSystem system = new SupplierConnectSystem();
+        system.setId(request.getSupplierConnectSystemId());
         system.setSupplierConnectSystemName(request.getSupplierConnectSystemName());
         return system;
 
@@ -30,14 +31,6 @@ public class SupplierConnectSystemServiceImpl implements SupplierConnectSystemSe
         return new SuccessDataResult<List<SupplierConnectSystem>>(supplierConnectSystemRepository.findAll(),"listed all scs ");
     }
 
-//    @Override
-//    public Result addScS(List<SupplierConnectSystemRequest> supplierConnectSystemRequests) {
-//        List<SupplierConnectSystem> supplierConnectSystems = supplierConnectSystemRequests.stream()
-//                .map(SupplierConnectSystemServiceImpl::mapToScs)
-//                .collect(Collectors.toList());
-//        this.supplierConnectSystemRepository.save();
-//        return  new SuccessResult("added");
-//    }
 
     public DataResult<List<SupplierConnectSystem>> addScS(List<SupplierConnectSystemRequest> supplierConnectSystemRequests) {
         List<SupplierConnectSystem> supplierConnectSystems = supplierConnectSystemRequests.stream()

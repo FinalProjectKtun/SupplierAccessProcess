@@ -1,13 +1,15 @@
 package com.cagri.supplieraccesproccess.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Table(name = "supplierScsRequestEntity")
 @Data
 @Entity
-public class SupplierScsRequestEntity extends BaseEntity{
+public class SupplierScsRequestEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long supplierId;
     private Long scsId;
