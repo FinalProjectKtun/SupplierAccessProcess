@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
+import org.springframework.data.domain.Sort;
 @Service
 public class SupplierServiceImpl implements SupplierService {
 
@@ -31,6 +31,8 @@ public class SupplierServiceImpl implements SupplierService {
         supplier.setPhoneNumOfThePerResForTheReq(request.getPhoneNumOfThePerResForTheReq());
         supplier.setSupplierConnectStarted(request.getSupplierConnectStarted());
         supplier.setSupplierConnectEnd(request.getSupplierConnectEnd());
+        supplier.setReasonForRejection(request.getReasonForRejection());
+        supplier.setSupplierConnectSystemName(request.getSupplierConnectSystemName());
         supplier.setStatus("Onaylanmadı");
         supplier.setDescription(request.getDescription());
         return supplier;
@@ -39,7 +41,8 @@ public class SupplierServiceImpl implements SupplierService {
 
     @Override
     public DataResult<List<Supplier>> getListSupplier() {
-        return new SuccessDataResult<List<Supplier>>(supplierRepository.findAll(),"listed all supplier");
+        Sort sort = Sort.by(Sort.Direction.ASC, "id");
+        return new SuccessDataResult<List<Supplier>>(supplierRepository.findAll(sort), "listed all suppliers sorted by id");
     }
 
     @Override
@@ -58,6 +61,7 @@ public class SupplierServiceImpl implements SupplierService {
         if (supplierDb.isPresent()) {
             supplier.setId(requestDto.getId());
             supplier.setStatus(requestDto.getStatus());
+            supplier.setReasonForRejection(requestDto.getReasonForRejection());
             this.supplierRepository.save(supplier);
         }
         return new SuccessResult("güncellendi ") ;

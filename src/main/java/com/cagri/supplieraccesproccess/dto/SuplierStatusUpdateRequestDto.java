@@ -6,4 +6,6 @@ import lombok.Data;
 public class SuplierStatusUpdateRequestDto {
     private Long id;
     private String status;
+    private String reasonForRejection;
+
 }
