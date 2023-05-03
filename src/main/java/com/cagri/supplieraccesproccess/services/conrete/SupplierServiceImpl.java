@@ -58,14 +58,16 @@ public class SupplierServiceImpl implements SupplierService {
     public Result updateSupplier(SuplierStatusUpdateRequestDto requestDto) {
         Optional<Supplier> supplierDb=this.supplierRepository.findById(requestDto.getId());
         Supplier supplier = supplierDb.get();
-        if (supplierDb.isPresent()) {
+        if (supplierDb.isPresent())     {
             supplier.setId(requestDto.getId());
             supplier.setStatus(requestDto.getStatus());
             supplier.setReasonForRejection(requestDto.getReasonForRejection());
             this.supplierRepository.save(supplier);
+            System.out.println("status => "+requestDto.getStatus().toString());
+            System.out.println("ReasonForRejection => "+requestDto.getReasonForRejection().toString());
+
         }
         return new SuccessResult("güncellendi ") ;
     }
-
 
 }
