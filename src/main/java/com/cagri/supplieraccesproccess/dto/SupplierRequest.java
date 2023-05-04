@@ -13,7 +13,6 @@ public class SupplierRequest {
 
     private String personResponsibleForTheRequest;
     private String phoneNumOfThePerResForTheReq;
-    private String reasonForRejection;
 
     private String supplierDate;
     private String supplierConnectStarted;

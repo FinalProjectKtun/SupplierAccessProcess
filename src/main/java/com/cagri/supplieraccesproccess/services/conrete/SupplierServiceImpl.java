@@ -33,10 +33,7 @@ public class SupplierServiceImpl implements SupplierService {
         supplier.setSupplierConnectStarted(request.getSupplierConnectStarted());
         supplier.setSupplierConnectEnd(request.getSupplierConnectEnd());
         supplier.setReasonForRejection(request.getReasonForRejection());
-<<<<<<< Updated upstream
         supplier.setSupplierConnectSystemName(request.getSupplierConnectSystemName());
-=======
->>>>>>> Stashed changes
         supplier.setStatus("Onaylanmadı");
         supplier.setDescription(request.getDescription());
         return supplier;
