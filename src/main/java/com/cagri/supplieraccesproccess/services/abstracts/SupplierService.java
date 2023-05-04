@@ -12,5 +12,5 @@ public interface SupplierService {
     DataResult<List<Supplier>> getListSupplier();
     Result addSupplier(List<SupplierRequest> supplierRequest);
 
-     Result updateSupplier(SuplierStatusUpdateRequestDto requestDto);
+    Result updateSupplier(SuplierStatusUpdateRequestDto requestDto);
 }

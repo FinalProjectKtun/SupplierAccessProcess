@@ -10,6 +10,7 @@ import com.cagri.supplieraccesproccess.entities.Supplier;
 import com.cagri.supplieraccesproccess.repository.SupplierRepository;
 import com.cagri.supplieraccesproccess.services.abstracts.SupplierService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +33,10 @@ public class SupplierServiceImpl implements SupplierService {
         supplier.setSupplierConnectStarted(request.getSupplierConnectStarted());
         supplier.setSupplierConnectEnd(request.getSupplierConnectEnd());
         supplier.setReasonForRejection(request.getReasonForRejection());
+<<<<<<< Updated upstream
         supplier.setSupplierConnectSystemName(request.getSupplierConnectSystemName());
+=======
+>>>>>>> Stashed changes
         supplier.setStatus("Onaylanmadı");
         supplier.setDescription(request.getDescription());
         return supplier;
@@ -60,6 +64,7 @@ public class SupplierServiceImpl implements SupplierService {
         Supplier supplier = supplierDb.get();
         if (supplierDb.isPresent())     {
             supplier.setId(requestDto.getId());
+            supplier.setReasonForRejection(requestDto.getReasonForRejection());
             supplier.setStatus(requestDto.getStatus());
             supplier.setReasonForRejection(requestDto.getReasonForRejection());
             this.supplierRepository.save(supplier);
@@ -67,7 +72,7 @@ public class SupplierServiceImpl implements SupplierService {
             System.out.println("ReasonForRejection => "+requestDto.getReasonForRejection().toString());
 
         }
-        return new SuccessResult("güncellendi ") ;
+        return new SuccessResult("güncellendi") ;
     }
 
 }
