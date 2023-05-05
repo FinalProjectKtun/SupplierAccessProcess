@@ -34,7 +34,7 @@ public class SupplierServiceImpl implements SupplierService {
         supplier.setSupplierConnectEnd(request.getSupplierConnectEnd());
         supplier.setReasonForRejection(request.getReasonForRejection());
         supplier.setSupplierConnectSystemName(request.getSupplierConnectSystemName());
-        supplier.setStatus("Onaylanmadı");
+        supplier.setStatus("İşlem Bekleniyor");
         supplier.setDescription(request.getDescription());
         return supplier;
     }
